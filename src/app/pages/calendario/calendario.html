@@ -1,0 +1,58 @@
+<div class="calendar-wrapper">
+
+  <!-- Barra de utilidades superior (discreta) -->
+  <div class="utility-bar">
+    <button class="home-btn" routerLink="/inicio">
+      <i class="fa-solid fa-house"></i>
+    </button>
+    <div class="digital-clock">
+      {{ currentTime }}
+    </div>
+  </div>
+
+  <div class="calendar-container">
+
+    <!-- Cabecera del Calendario -->
+    <div class="calendar-header">
+      <div class="nav-section">
+        <button class="nav-btn" (click)="prevYear()">
+          <i class="fa-solid fa-angles-left"></i>
+        </button>
+        <button class="nav-btn" (click)="prevMonth()">
+          <i class="fa-solid fa-angle-left"></i>
+        </button>
+      </div>
+
+      <div class="current-info">
+        <h2 class="month-name">{{ monthNames[currentDate.getMonth()] }}</h2>
+        <span class="year-name">{{ currentDate.getFullYear() }}</span>
+      </div>
+
+      <div class="nav-section">
+        <button class="nav-btn" (click)="nextMonth()">
+          <i class="fa-solid fa-angle-right"></i>
+        </button>
+        <button class="nav-btn" (click)="nextYear()">
+          <i class="fa-solid fa-angles-right"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Cuerpo del Calendario -->
+    <div class="calendar-body">
+      <div class="weekday-header">
+        <div *ngFor="let day of weekDays" class="weekday">{{ day }}</div>
+      </div>
+
+      <div class="days-grid">
+        <div *ngFor="let day of days"
+             class="day-cell"
+             [class.other-month]="!isCurrentMonth(day)"
+             [class.today]="isToday(day)">
+          <span class="day-number">{{ day.getDate() }}</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

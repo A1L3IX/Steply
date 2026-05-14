@@ -1,10 +1,39 @@
 <div class="inicio-wrapper">
   <div class="inicio-content">
-    <h1 class="main-title">STEPLY</h1>
 
-    <div class="action-card">
-      <button class="btn-add">
-        <i class="fa-solid fa-plus"></i>
+    <!-- Cabecera agrupada -->
+    <div class="header-group">
+      <h1 class="main-title">STEPLY</h1>
+      <p class="rotating-phrase">{{ currentFrase }}</p>
+    </div>
+
+    <!-- Botones Principales -->
+    <div class="main-actions-grid">
+      <div class="action-card btn-plus">
+        <button class="btn-icon">
+          <i class="fa-solid fa-plus"></i>
+        </button>
+      </div>
+      <div class="action-card btn-explore" routerLink="/explorar">
+        <button class="btn-icon">
+          <i class="fa-solid fa-compass"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Cuadrícula de plantillas -->
+    <div class="templates-grid">
+      <button class="template-btn">
+        <i class="fa-solid fa-folder"></i>
+      </button>
+      <button class="template-btn">
+        <i class="fa-solid fa-list-ul"></i>
+      </button>
+      <button class="template-btn">
+        <i class="fa-solid fa-check-double"></i>
+      </button>
+      <button class="template-btn" routerLink="/calendario">
+        <i class="fa-solid fa-calendar-days"></i>
       </button>
     </div>
   </div>
