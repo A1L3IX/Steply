@@ -1,12 +1,18 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('Steply');
+  // Estado de la vista actual: 'home', 'login', 'register'
+  currentView = signal<'home' | 'login' | 'register'>('home');
+
+  setView(view: 'home' | 'login' | 'register') {
+    this.currentView.set(view);
+  }
 }
