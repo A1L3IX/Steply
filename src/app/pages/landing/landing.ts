@@ -1,9 +1,17 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-landing',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './landing.html',
   styleUrl: './landing.css',
 })
-export class Landing {}
+export class Landing {
+  currentView: 'home' | 'login' | 'register' = 'home';
+
+  setView(view: 'home' | 'login' | 'register') {
+    this.currentView = view;
+  }
+}

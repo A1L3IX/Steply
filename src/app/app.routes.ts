@@ -1,9 +1,9 @@
 import { Routes } from '@angular/router';
-import { LandingComponent } from './pages/landing/landing';
-import { InicioComponent } from './pages/inicio/inicio';
+import { Landing } from './pages/landing/landing';
+import { Inicio } from './pages/inicio/inicio';
 
 export const routes: Routes = [
-  { path: '', component: LandingComponent },
-  { path: 'inicio', component: InicioComponent },
+  { path: '', component: Landing },
+  { path: 'inicio', component: Inicio },
   { path: '**', redirectTo: '' }
 ];
