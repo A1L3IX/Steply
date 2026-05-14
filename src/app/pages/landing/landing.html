@@ -1,1 +1,41 @@
-<p>landing works!</p>
+<div class="landing-wrapper">
+  <!-- Vista Principal (Home) -->
+  <main class="container" *ngIf="currentView === 'home'">
+    <h1>Steply</h1>
+    <div class="line"></div>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    </p>
+    <div class="button-group">
+      <button (click)="setView('login')" class="btn btn-primary">Iniciar sesión</button>
+      <button (click)="setView('register')" class="btn btn-secondary">Registrarte</button>
+    </div>
+  </main>
+
+  <!-- Vista de Login -->
+  <main class="container" *ngIf="currentView === 'login'">
+    <button (click)="setView('home')" class="btn-back">← Volver</button>
+    <h1>Login</h1>
+    <div class="line"></div>
+    <form class="form-group">
+      <input type="email" placeholder="Email" class="input-field">
+      <input type="password" placeholder="Contraseña" class="input-field">
+      <button type="submit" class="btn btn-primary">Entrar</button>
+    </form>
+    <p class="form-footer">¿No tienes cuenta? <span (click)="setView('register')">Regístrate</span></p>
+  </main>
+
+  <!-- Vista de Registro -->
+  <main class="container" *ngIf="currentView === 'register'">
+    <button (click)="setView('home')" class="btn-back">← Volver</button>
+    <h1>Registro</h1>
+    <div class="line"></div>
+    <form class="form-group">
+      <input type="text" placeholder="Nombre completo" class="input-field">
+      <input type="email" placeholder="Email" class="input-field">
+      <input type="password" placeholder="Contraseña" class="input-field">
+      <button type="submit" class="btn btn-primary">Crear cuenta</button>
+    </form>
+    <p class="form-footer">¿Ya tienes cuenta? <span (click)="setView('login')">Inicia sesión</span></p>
+  </main>
+</div>
