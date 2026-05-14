@@ -1,19 +1,24 @@
 <nav class="navbar" *ngIf="showNavbar()">
   <div class="nav-left">
-    <span class="logo" (click)="goTo('inicio')">Steply</span>
+    <span class="logo" (click)="goTo('')">Steply</span>
   </div>
 
   <div class="nav-center">
     <div class="search-container">
+      <i class="fa-solid fa-magnifying-glass search-icon"></i>
       <input type="text" placeholder="Buscar..." class="search-input">
     </div>
   </div>
 
   <div class="nav-right">
-    <button class="nav-link" (click)="goTo('crear')">Crear</button>
-    <button class="nav-link" (click)="goTo('explorar')">Explorar</button>
+    <button class="nav-link" (click)="goTo('crear')">
+      <i class="fa-solid fa-plus-square icon-spacing"></i>Crear
+    </button>
+    <button class="nav-link" (click)="goTo('explorar')">
+      <i class="fa-solid fa-compass icon-spacing"></i>Explorar
+    </button>
     <div class="user-profile">
-      <div class="avatar"></div>
+      <i class="fa-solid fa-circle-user user-icon"></i>
     </div>
   </div>
 </nav>
