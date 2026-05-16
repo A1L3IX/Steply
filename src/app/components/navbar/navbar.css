@@ -46,7 +46,7 @@
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid var(--border-color);
   padding: 0.7rem 1rem 0.7rem 2.8rem;
-  border-radius: 6px;
+  border-radius: 0;
   color: white;
   font-size: 0.8rem;
   outline: none;
